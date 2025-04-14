@@ -6,7 +6,7 @@ terraform {
   backend "s3" {
     bucket = "sctp-ce8-tfstate"
     key    = "glenn-s3-tf-ci.tfstate" #Change this
-    region = "us-east-1"
+    region = "ap-southeast-1"
   }
 }
 

@@ -36,5 +36,5 @@ locals {
 # checkov:skip=CKV_AWS_18 reason="Access logging will be configured in future"
 # checkov:skip=CKV2_AWS_61 reason="Lifecycle rules are applied separately"
 resource "aws_s3_bucket" "s3_tf" {
-  bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
+  bucket = "${join("-", local.name_prefix)}-s3-tf-bkt-${local.account_id}"
 }

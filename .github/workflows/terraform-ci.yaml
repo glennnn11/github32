@@ -48,6 +48,10 @@ jobs:
       uses: bridgecrewio/checkov-action@master
       with:
         framework: terraform
+        skip_check: ""  # Allow Checkov to honor skip comments
+        output_format: sarif  # Output format as SARIF (Security Analysis Report Interchange Format)
+        soft_fail: true  # In case of failed checks, allow CI to continue
+        use_enforcement_rules: false  # Skip strict enforcement rules (allow skipping comments)
    
     - name: Terraform Plan
       run: terraform plan

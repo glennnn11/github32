@@ -24,7 +24,7 @@ terraform {
 data "aws_caller_identity" "current" {}
 
 locals {
-  name_prefix = split("/", "${data.aws_caller_identity.current.arn}")
+  name_prefix = split("/", data.aws_caller_identity.current.arn)
   account_id  = data.aws_caller_identity.current.account_id
 }
 
